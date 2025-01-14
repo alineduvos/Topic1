@@ -67,7 +67,7 @@ Byte streams are used to handle raw binary data, for example reading / writing f
 	- Otherwise the file is overwritten
 	- Call write(int b) to write a single byte. To write an array of bytes we can use write(byte[], offset, length).
 
-# Serialization and Deserialization 
+## Serialization and Deserialization 
 ### What is Serialization? 
 It is the process of converting a Java object into a byte stream so it can be saved to a file, or can be sent to a network, or stored in DB (as blob file too).
  
@@ -79,3 +79,74 @@ The reverse process of converting a byte stream back into a java object.
  2. **We can use the **ObjectOutputStream** to Serialize** - writes an object to an output stream (file) 
  3. **We can use the ObjectInputStream to Deserialize** - reads a serialized object from an input stream and basically reconstructs it. 
  
+ # String Formatting
+String formatting basically allows us to build strings dynamically by embedding values into a template (predefined template). We use the **String.format()** method or **System.out.printf()** method.
+### Basic String Formatting
+` 
+        String name = "Bruce Wayne";
+        int age = 24;
+        
+        /*
+             %s = placeholder for a string
+             %d = placeholder for an integer 
+        
+        */
+        String formatted = String.format("Name: %s, Age: %d ", name,age);
+        System.out.println(formatted);`
+
+### Floating-Point Number Formatting
+`/*
+            %.2f - formats a number to 2 decimal places
+            %.0f - formats a number with 0 decimal places
+            %% - escapes the % to print it
+        
+        */
+        
+        double price = 19.99;
+        double discount = 15; // want to show as 15% 
+        String ffNumbers = String.format("Price: R%.2f, Discount: %.0f%%", price, discount);
+        System.out.println(ffNumbers);`
+### Aligning Text and Numbers
+`/*
+            %10s - right aligns a string (10 characters) 
+            %-10s - left aligns a string (10 characters)
+        
+        */
+        System.out.println(String.format("%-10s %10s", "Item", "Price"));
+        System.out.println(String.format("%-10s %10s", "Book", 12.99));
+        System.out.println(String.format("%-10s %10s", "Pen", 1.99));`
+ 
+ # PrintStream 
+ A class that can be used to output data to a destination such as a console, a file, network location (socket), or some other file, etc. It provides methods for printing formatted representations of object, primitive data, and strings.  
+  
+  ### Methods of PrintStream
+  
+| Method | Description |
+|--|--|
+| print(String s) | Prints a string without a new line |
+| println(String s) | Prints a string followed by a new line |
+| printf(String format, Object args) | Prints a formatted string similar to String.format() |
+| close() | Closes the stream and releases resources  |
+
+## Difference between FileInputStream/FileOutputStream and BufferedInputStream/BufferedOutputStream
+
+|Feature| FileInputStream/FileOutputStream | 
+|--|--|
+| Data Handling | Reads/Writes data byte by byte  |
+| Efficiency | Less efficient, takes more disk/network access |
+| Performance| Slower for large files or repeating tasks (operations) |
+
+|Feature| BufferedInputStream/BufferedOutputStream| 
+|--|--|
+| Data Handling | Reads/Writes data in chunks  |
+| Efficiency | More efficient, less I/O operations |
+| Performance| Faster because reduced interaction with the file |
+
+
+## Data Streams
+Data streams are special streams in Java that are used for reading and writing primitive data types. 
+
+### Why use Data Streams?
+1. **Efficient** - data is written in a compact binary form (saves us space)
+2. **Cross-Language compatibility** - binary format can be read by other languages easily
+3. **Handles Primitive Types** - makes it easier without manual conversions.
