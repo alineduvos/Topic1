@@ -1,4 +1,3 @@
-
 # Topic 1: Handling Data Through Streams
 
 ## Introduction 
@@ -67,3 +66,16 @@ Byte streams are used to handle raw binary data, for example reading / writing f
 	- If append = true, new data will be added to the file
 	- Otherwise the file is overwritten
 	- Call write(int b) to write a single byte. To write an array of bytes we can use write(byte[], offset, length).
+
+# Serialization and Deserialization 
+### What is Serialization? 
+It is the process of converting a Java object into a byte stream so it can be saved to a file, or can be sent to a network, or stored in DB (as blob file too).
+ 
+### What is Deserialization? 
+The reverse process of converting a byte stream back into a java object. 
+ 
+ ### Steps o Serialize and Deserialize 
+ 1. **Mark the class with Serializable** - a class must implement this interface to indicate it can be serialized. 
+ 2. **We can use the **ObjectOutputStream** to Serialize** - writes an object to an output stream (file) 
+ 3. **We can use the ObjectInputStream to Deserialize** - reads a serialized object from an input stream and basically reconstructs it. 
+ 

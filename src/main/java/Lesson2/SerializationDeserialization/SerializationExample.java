@@ -5,8 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 class Student implements Serializable{
     
@@ -28,8 +26,6 @@ class Student implements Serializable{
         return "Student{name = '"+name+"', age = "+age+", course = '"+course+"'}";
     }
 }
-
-
  
 public class SerializationExample {
     public static void main(String[] args) {
