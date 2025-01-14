@@ -18,6 +18,7 @@ public class FileWriteExample {
             
             System.out.println("Data written to file!");
             
+            
         }catch (IOException e){
             System.out.println("Error : "+e.getMessage());
         }
