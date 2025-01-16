@@ -150,3 +150,30 @@ Data streams are special streams in Java that are used for reading and writing p
 1. **Efficient** - data is written in a compact binary form (saves us space)
 2. **Cross-Language compatibility** - binary format can be read by other languages easily
 3. **Handles Primitive Types** - makes it easier without manual conversions.
+
+## The File Class
+The File class in Java comes from the java.io . And it is used to perform operations related to files and directories. It has methods that allow us to create, delete, rename, check if a file exists and more...
+### Key Features (Or why we would use the File class)
+- We can do CRUD on files
+- We can get metadata of file (name, path, size,etc)
+- We can check if a file exists, and if it does not then we can create it
+
+## Character Stream 
+Typical use case would be when working with text files. 
+
+### InputStreamReader
+Converts a byte stream(InputStream) into a character stream. It reads data byte by bytes and it decodes the bytes into characters.
+
+### InputStreamWriter
+Converts character data into a byte stream. This uses character encoding. 
+
+### BufferedReader 
+Wraps around a InputStreamReader to provide buffering. Reads characters in chunks , it improves performance. 
+
+### BufferedWriter
+Wraps around a InputStreamWriter to provide buffering. 
+
+## PrinteWriter
+This class is used for writing formatter text to an output stream. Gives us easy to use methods like `print()` and `println()`
+
+- **Gives us a method called checkError()** - this can check if errors occurred during writing to a file or output stream. 
